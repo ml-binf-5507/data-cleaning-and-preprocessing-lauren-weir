@@ -1,0 +1,17 @@
+[workspace]
+authors = ["lauren-weir <weiriam@gmail.com>"]
+channels = ["conda-forge"]
+name = "data-cleaning-and-preprocessing-lauren-weir"
+platforms = ["win-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.14.3,<3.15"
+
+[pypi-dependencies]
+pandas = ">=2.0.0"
+numpy = ">=1.24.0"
+scikit-learn = ">=1.2.0"
+pytest = ">=7.0.0"
