@@ -24,27 +24,25 @@ Do NOT:
 
 **Did you use any AI tools to help with this assignment?**
 
-_____ Yes     __X___ No
+___X__ Yes     _____ No
 
 **If yes, please tell us:**
 
 1. **What tools did you use?** (e.g., ChatGPT, Claude, GitHub Copilot)
    
-   _________________________________________________________________
+   ____Google_AI
 
 2. **What specific things did you ask them to do?** (Be specific)
    
-   _________________________________________________________________
-   
-   _________________________________________________________________
+   ___The tests file couldn't find the source folder, I needed to add the folder to the system path using sys.path.insert()
 
 3. **How much of your final code came from AI vs. your own work?** (e.g., "AI gave me the formula, I wrote the loop" or "AI helped me debug an error")
    
-   ____I used the tutorial.__________________________________________
+   ____import sys, sys.path.insert(0,"."), are from the Google, the rest is from tutorial and cheat sheet.
    
    _________________________________________________________________
 
-4. **Can you explain your code?** (Can you walk through what each function does and why you wrote it that way?)
+1. **Can you explain your code?** (Can you walk through what each function does and why you wrote it that way?)
    
    ___X__ Yes, I can explain it well
    
@@ -54,9 +52,9 @@ _____ Yes     __X___ No
 
 **Additional comments:**
 
-__The tutorial was helpful.______________________________________
+__The categorical columns report as False when the conditional asks for an object, but true if I use a string.
 
-_________________________________________________________________
+_My functions work, but the rest of the code seems to give errors?________________________________________________________________
 
 ---
 

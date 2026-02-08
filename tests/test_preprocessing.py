@@ -9,7 +9,10 @@ Tests are organized in phases:
 
 import json
 import os
+import sys
 from pathlib import Path
+
+sys.path.insert(0,".")
 
 import numpy as np
 import pandas as pd

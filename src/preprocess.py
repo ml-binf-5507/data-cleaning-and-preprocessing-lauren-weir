@@ -88,7 +88,7 @@ def detect_feature_types(df: pd.DataFrame, target: str, id_cols: List[str]) -> T
     pass
 
     feature_cols = [c for c in df.columns if c not in id_cols and c != target]
-    cat_cols = [c for c in feature_cols if df[c].dtype == 'object']
+    cat_cols = [c for c in feature_cols if df[c].dtype == 'str']
     num_cols = [c for c in feature_cols if df[c].dtype in ['int64', 'float64']]
     return (cat_cols, num_cols)
 
@@ -136,7 +136,7 @@ def encode_categorical(df: pd.DataFrame, cat_cols: List[str]) -> Tuple[pd.DataFr
         enc_cat = pd.get_dummies(df[col], prefix=col, dtype=int)
         enc_cols.extend(enc_cat.columns.tolist())
         df_enc = df_enc.drop(col, axis=1)
-        df_enc = pd.concat([df, enc_cat], axis=1)
+        df_enc = pd.concat([df_enc, enc_cat], axis=1)
     
     return (df_enc, enc_cols)
 
