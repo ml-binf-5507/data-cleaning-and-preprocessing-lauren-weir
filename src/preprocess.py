@@ -87,6 +87,11 @@ def detect_feature_types(df: pd.DataFrame, target: str, id_cols: List[str]) -> T
     # 4. Return (cat_cols, num_cols)
     pass
 
+    feature_cols = [c for c in df.columns if c not in id_cols and c != target]
+    cat_cols = [c for c in feature_cols if df[c].dtype == 'object']
+    num_cols = [c for c in feature_cols if df[c].dtype in ['int64', 'float64']]
+    return (cat_cols, num_cols)
+
 
 # ============================================================================
 # STEP 3: ENCODE CATEGORICAL COLUMNS
@@ -123,6 +128,18 @@ def encode_categorical(df: pd.DataFrame, cat_cols: List[str]) -> Tuple[pd.DataFr
     # You can use pd.get_dummies(..., columns=...) or post-process to match columns.
     pass
 
+    df_enc = df.copy()
+
+    enc_cols = []
+
+    for col in cat_cols:
+        enc_cat = pd.get_dummies(df[col], prefix=col, dtype=int)
+        enc_cols.extend(enc_cat.columns.tolist())
+        df_enc = df_enc.drop(col, axis=1)
+        df_enc = pd.concat([df, enc_cat], axis=1)
+    
+    return (df_enc, enc_cols)
+
 
 # ============================================================================
 # STEP 4: SCALE NUMERIC COLUMNS
@@ -149,6 +166,23 @@ def scale_numeric(df: pd.DataFrame, num_cols: List[str]) -> Tuple[pd.DataFrame, 
     #    c. Standardize: (col - mean) / std
     # 3. Return (scaled_df, means_dict, stds_dict)
     pass
+
+    df_scaled = df.copy()
+    means_dict = {}
+    stds_dict = {}
+
+    for col in num_cols:
+        df_scaled[col] = df_scaled[col].fillna(df_scaled[col].median())
+
+        means_dict[col] = df_scaled[col].mean()
+        stds_dict[col] = df_scaled[col].std()
+
+        df_scaled[col] = (df_scaled[col] - means_dict[col])/stds_dict[col]
+
+    return (df_scaled, means_dict, stds_dict)
+
+
+
 
 
 # ============================================================================

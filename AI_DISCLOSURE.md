@@ -24,7 +24,7 @@ Do NOT:
 
 **Did you use any AI tools to help with this assignment?**
 
-_____ Yes     _____ No
+_____ Yes     __X___ No
 
 **If yes, please tell us:**
 
@@ -40,13 +40,13 @@ _____ Yes     _____ No
 
 3. **How much of your final code came from AI vs. your own work?** (e.g., "AI gave me the formula, I wrote the loop" or "AI helped me debug an error")
    
-   _________________________________________________________________
+   ____I used the tutorial.__________________________________________
    
    _________________________________________________________________
 
 4. **Can you explain your code?** (Can you walk through what each function does and why you wrote it that way?)
    
-   _____ Yes, I can explain it well
+   ___X__ Yes, I can explain it well
    
    _____ Mostly, but I have some questions
    
@@ -54,7 +54,7 @@ _____ Yes     _____ No
 
 **Additional comments:**
 
-_________________________________________________________________
+__The tutorial was helpful.______________________________________
 
 _________________________________________________________________
 
